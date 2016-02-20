@@ -12,14 +12,17 @@ module.exports = {
   	guid: {
   		type: "string",
   		defaultsTo: function() {
-  			return md5(Math.random()).substring(0,7)
+  			return md5(new Date() + Math.random()).substring(0,7)
   		}
   	},
   	name: {
-  		type: "string"
+  		type: "string",
+      required: true
   	},
   	uid: {
-  		type: "string"
+  		type: "string",
+      required: true,
+      unique: true
   	},
   	email: {
   		type: "string"
